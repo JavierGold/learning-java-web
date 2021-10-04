@@ -12,6 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Expresiones JSP</h1>
+        Concatenar: <%= "Hola " + "cómo están?"%>
+        <br>
+        Operación aritmética: <%= 2*3/2%>
+        <br>
+        Id de Sesión: <%= session.getId()%>
+        <br>
+        <a href="index.html">Regresar al inicio</a>
     </body>
 </html>
