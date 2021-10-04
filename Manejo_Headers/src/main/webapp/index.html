@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo cabeceros</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="recursos/calculos.js"></script>
+    </head>
+    <body>
+        <h1>Ejemplo headers my dear</h1>
+        <a href="/Manejo_Headers/ServletHeader">Link a servlet header</a>
+
+        <h4>Calculos</h4>
+        <form action="/Manejo_Headers/ServletH" method="post" onsubmit="return Rutas(this)">
+            <table width="200" id="enfasis-columnas">
+                <tr>
+                    <td>
+                        Formula general: <input type="radio" name="opcion" value="1" ><!-- comment -->
+                        <br>
+                        Número primo:<input type="radio" name="opcion" value="2" ><!-- comment -->
+                        <br>
+                        Triángulo: <input type="radio" name="opcion" value="3" >
+                        <br>
+                    </td>
+                </tr>
+                <tr style="text-align: center">
+                    <td>
+                        <button  type="submit" value="Vamonos" class="default">Vamos</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </body>
+</html>
