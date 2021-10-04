@@ -18,7 +18,7 @@
         Operación aritmética: <%= 2*3/2%>
         <br>
         Id de Sesión: <%= session.getId()%>
-        <br>
+        <br><br>
         <a href="index.html">Regresar al inicio</a>
     </body>
 </html>

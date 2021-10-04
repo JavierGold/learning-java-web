@@ -12,6 +12,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Datos procesados</h1>
+        Usuario: <%= request.getParameter("usuario") %>
+        <br><br>
+        Contraseña: <%= request.getParameter("password") %>
+        <br><br>
+        <a href="index.html">Regresar al inicio</a>
     </body>
 </html>
