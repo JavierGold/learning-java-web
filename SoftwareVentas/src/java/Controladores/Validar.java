@@ -5,6 +5,8 @@
  */
 package Controladores;
 
+import Modelos.Usuario;
+import Modelos.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -29,6 +31,10 @@ public class Validar extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    Usuario usuario = new Usuario();
+    UsuarioDAO usuarioDAO = new UsuarioDAO();
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -72,7 +78,27 @@ public class Validar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+          String accion = request.getParameter("accion");
+        if (accion.equalsIgnoreCase("Ingresar")) {
+            int documento = Integer.parseInt(request.getParameter("txtusuario"));
+            String pass = request.getParameter("txtpassword");
+            usuario = usuarioDAO.Validar(documento, pass);
+            System.out.print("dato"+usuario.getNombre());
+            if(usuario.getNombre()!= null){
+                System.out.print("dato1"+usuario.getNombre());
+                request.setAttribute("usuario", usuario);
+                request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
+                
+
+            }else{
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
+            
+
+        }else{
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
     }
 
     /**
