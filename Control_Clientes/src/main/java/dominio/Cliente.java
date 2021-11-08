@@ -14,6 +14,10 @@ public class Cliente {
     
     public Cliente(){}
 
+    public Cliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+     
     public Cliente(String nombre, String apellido, String email, String telefono, double saldo) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -77,6 +81,19 @@ public class Cliente {
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Cliente{idCliente=").append(idCliente);
+        sb.append(", nombre=").append(nombre);
+        sb.append(", apellido=").append(apellido);
+        sb.append(", email=").append(email);
+        sb.append(", telefono=").append(telefono);
+        sb.append(", saldo=").append(saldo);
+        sb.append('}');
+        return sb.toString();
     }
     
     
