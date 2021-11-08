@@ -1,9 +1,6 @@
 package Modelos;
 
-/**
- *
- * @author AdminSena
- */
+
 public class Usuario {
     
     int id;
